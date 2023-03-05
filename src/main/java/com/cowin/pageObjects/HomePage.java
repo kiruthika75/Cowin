@@ -14,6 +14,8 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
+	@FindBy(id = 'mat-select-4')
+	private WebElement State;
 	
 	
 	

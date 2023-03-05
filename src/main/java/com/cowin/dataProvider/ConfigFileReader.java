@@ -26,10 +26,10 @@ public class ConfigFileReader {
 
 	}
 
-	private void getUrl() {
+	public String getUrl() {
 
 		String Url = properties.getProperty("url");
-
+		return Url;
 	}
 
 }
