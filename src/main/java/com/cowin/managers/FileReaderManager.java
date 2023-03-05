@@ -2,26 +2,37 @@ package com.cowin.managers;
 
 import java.io.IOException;
 
+
+
 import com.cowin.dataProvider.ConfigFileReader;
 
+
+
 public class FileReaderManager {
-	private static FileReaderManager fileReaderManager ;
-	private static ConfigFileReader configFileReader;
 
-	
-	public FileReaderManager() {
-		fileReaderManager = new FileReaderManager();
-	}
+    private static FileReaderManager fileReaderManager; 
+    private static ConfigFileReader configFileReader;
+   // private static JsonDataReader jsonDataReader;
 
-	public static FileReaderManager getInstance() {
-		
-		return fileReaderManager;
+    private FileReaderManager() {
+    	
+    	fileReaderManager = new FileReaderManager();
+    }
 
-	}
+    public static FileReaderManager getInstance( ) {
+        return fileReaderManager;
+       
+    }
 
-	public ConfigFileReader getConfigReader() throws IOException {
-		
+    public static ConfigFileReader getConfigReader() {
+    	
+        if (configFileReader == null)
+			return new ConfigFileReader();
+		else
 			return configFileReader;
-	}
+    }
 
+//    public JsonDataReader getJsonReader(){
+//        return (jsonDataReader == null) ? new JsonDataReader() : jsonDataReader;
+//    }
 }

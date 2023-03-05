@@ -24,12 +24,13 @@ public class FilterTestSteps extends BaseClass {
 
 	@Given("user Scroll Down To Search Url")
 	public void user_scroll_down_to_search_url() {
-
+		
+		clickelement(pom.getHomePage().getState());
 	}
 
 	@When("user Filter {string} in state Search Bar")
 	public void user_filter_in_state_search_bar(String string) {
-
+		pom.getHomePage().getState().click();
 	}
 
 	@When("user Filter {string} in city Search Bar")

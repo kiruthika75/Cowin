@@ -14,8 +14,14 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(id = 'mat-select-4')
+	public WebElement getState() {
+		return State;
+	}
+
+	@FindBy(id = "mat-select-4")
 	private WebElement State;
+	
+	
 	
 	
 	

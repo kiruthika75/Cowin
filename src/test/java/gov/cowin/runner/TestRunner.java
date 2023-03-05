@@ -8,7 +8,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.cowin.baseClass.BaseClass;
-import com.cowin.dataProvider.ConfigFileReader;
 import com.cowin.managers.FileReaderManager;
 
 import io.cucumber.junit.Cucumber;
@@ -21,7 +20,7 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome = true, 
 		glue = "gov.cowin.stepDefinition", 
 		dryRun = false, 
-		stepNotifications = false)
+		stepNotifications = true)
 
 public class TestRunner {
 
@@ -31,14 +30,16 @@ public class TestRunner {
 	public static void setUP() throws IOException {
 		
 		String BrowserName = FileReaderManager.getInstance().getConfigReader().getBrowser();
+		System.out.println(BrowserName);
 		driver = BaseClass.browserlaunch(BrowserName);
+		
 				
 	}
 
 	@AfterClass
 	public static void tearDown() {
 		
-		driver.quit();
+		//driver.quit();
 		
 	}
 }
